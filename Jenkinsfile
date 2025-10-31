@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        git 'https://github.com/<твой_репозиторий>.git'
+        https://github.com/myservicemail2025-svg/fasck.git
       }
     }
     stage('Build Docker Image') {
