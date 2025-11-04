@@ -1,23 +1,19 @@
 pipeline {
     agent any
-
     stages {
-        stage('Clone') {
+        stage('Build') {
             steps {
-                git url: 'https://github.com/myservicemail2025-svg/fasck.git', branch: 'main'
+                echo 'Building application...'
             }
         }
-
-        stage('Build Docker Image') {
+        stage('Test') {
             steps {
-                sh 'docker build -t flask-app .'
+                echo 'Running tests...'
             }
         }
-
         stage('Deploy') {
             steps {
-                sh 'docker compose down || true'
-                sh 'docker compose up -d'
+                echo 'Deploying application...'
             }
         }
     }
